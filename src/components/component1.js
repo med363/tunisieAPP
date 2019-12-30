@@ -1,15 +1,21 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import Ki from "./component4";
 export default ()=>{
     return(
-        <div>
-            <h1>hear we can visite my profile and watch my notificattion</h1>
-            {/* <h1>COMP 1</h1>
-            <img src="https://www.robohash.org/amin1" /> */}
-
-            {/* <Link to="./components/component2">click to move to component2</Link>
-            <Link to="./components/component3">click to move to component3</Link> */}
+        <div >
+            <div style={{display: 'flex', justifyContent:'center', flexDirection: 'column', alignItems: 'center'}}>
+            <h1 style={{textShadow:"1px 1px 10px black"}} >Wonderful Tunisia </h1>
+            <img style={{ borderRadius: "20px"}}src="/images.JPG"/>
+            </div>
+            <p style={{textIndent:30,fontWeight:'bold',textAlign:'justify'}}>
+             Tunisia represents beautiful white sand beaches, green oases and yellow sands of the Sahara, behind which one can see sharp mountain peaks. The mild Mediterranean climate, the clean and warm Mediterranean Sea. Unfortunately, it needs solutions so that the infrastructure is well.         </p>
+            <div>
+            <h3>Some exemples of bad infrastructure:</h3>
+            <Ki/>
+            </div>
+           
         </div>
+           
 
     )
 }
