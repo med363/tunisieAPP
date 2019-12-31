@@ -35,7 +35,7 @@ class Ki extends Component {
    render() {
     return (
      <div>
-         <div style={{marginTop: 20, display: 'flex', justifyContent: 'space-around'}}>
+         <div style={{marginTop: 20, display: 'flex', justifyContent: 'center'}}>
             <button className="ux" style={{ padding: '1em', border: ' 1px solid #CCC', borderRadius: '1em'}} onClick={this.handleAiClick}>Ain drahem</button>
             <button className="ux" style={{ padding: '1em', border: ' 1px solid #CCC', borderRadius: '1em'}} onClick={() => this.handleCiClick()}>Ain snoussi</button>
             <button className="ux" style={{ padding: '1em', border: ' 1px solid #CCC', borderRadius: '1em'}} onClick={() => this.handleBiClick()}>Kerkennah</button>
