@@ -52,31 +52,38 @@ class contact extends Component {
 
     render() {
         return (
-                <div>
-                    <form ref="contactForm"  onSubmit={this.handleSubmit} style={{border:'1px solid black',padding:'30%'}}>
-                        <h1 style={{color:"red"}}>CONTACT US</h1>
-                        <div><label style={{color:"red"}}>your name</label> <input className='r' style={{borderRadius: '1em'}} ref="name" type="text" placeholder='name' required/><br/></div>
+                <div className="contact1" >
+                    <div className="container-contact1">
+                    <form ref="contactForm"  onSubmit={this.handleSubmit} style={{marginTop:"20%",height:"450px" ,marginRight:"30%" ,marginLeft:"-2%",border:'1px none blue',padding:'30px,30px,30px,30px' }} className="contact1-form validate-form">
+                        <span className="contact1-form-title">CONTACT US</span>
+                        <div className="wrap-input1 validate-input" data-validate = "Name is required"><label style={{color:"black",fontWeight:"bold"}}>Your Name</label> <input className='input1' style={{borderRadius: '1em'}} ref="name" type="text" placeholder='Name' required/><span className="shadow-input1"></span><br/></div>
                         
-                        <label style={{color:"red"}}>your number</label> 
-                        <div  style={{display: 'inline-block'}}>
+                        <label style={{color:"black",fontWeight:"bold"}}>Your Number</label> 
+                        <div className="wrap-input1 validate-input"  style={{}}>
                             <div style={{display: 'flex', flexDirection: 'row'}}>
-                                <select className='r' style={{borderRadius: '1em'}} ref="number1">
+                                <select className='input1' style={{borderRadius: '1em'}} ref="number1">
                                     <option value="+216">TUN </option>
                                     <option value="+214">ALG</option>
                                     <option value="+213">MAR</option>
                                 </select>
                                 {/* <input type="number" placeholder='+216' required style={{width: 60}} /><br/> */}
-                                <input className='r' style={{borderRadius: '1em'}} ref="number2" type="text" placeholder='55242133' required /><br/>
+                                <input className='input1' style={{borderRadius: '1em'}} ref="number2" type="text" placeholder='55242133' required /><span className="shadow-input1"></span><br/>
                             </div>
                         </div>
-                        <br />
-                        <label style={{color:"red"}}>your mail</label> <input className='r' style={{borderRadius: '1em'}} ref="email" type="email" placeholder='exple@gmail.com' name="email" size='30' maxLength='40' required /><br/>
-                        <br/><input className="ux" type="submit" value="Envoyer"  style={{display: 'flex',marginLeft:"auto",marginRight:"80%", justifyContent:'center', flexDirection: 'column', alignItems: 'center', padding: '1em', border: ' 1px solid #CCC', borderRadius: '1em' }} />
+                        <br /><div className="wrap-input1 validate-input" >
+                        <label style={{color:"black",fontWeight:"bold"}}>Your E-mail</label> <input className='input1' style={{borderRadius: '1em'}} ref="email" type="email" placeholder='user@gmail.com' name="email" size='30' maxLength='40' required /><span className="shadow-input1"></span></div><br/>
+                        <br/><div className="container-contact1-form-btn"><input className="ux" type="submit" value="Envoyer"  style={{color:"black" ,display: 'flex',marginLeft:"auto",marginRight:"80%", justifyContent:'center', flexDirection: 'column', alignItems: 'center', padding: '1em', border: ' 1px none #CCC' }} /></div>
                         
                         
 
                     </form>
-                    <div  style={{marginLeft:"0%",marginRight:"80%",color:"white"}}><div>or visit my social media :</div><br/><img className="fa fa-facebook" src="/13.PNG" ref="fb" onClick={() => window.location="https://www.facebook.com/medamine.blibech"} style={{ cursor:'wait' }}/><img  className="fa fa-google" src="/14.jpg" ref="fb" onClick={() => window.location="https://mail.google.com/mail/u/0/#ùinbox"} style={{ cursor:'wait' }} /></div>
+                    <img style={{width:"30%",height:"30%"}} src="/1.png"/>
+                    </div>
+                    
+                        
+                           
+                    
+                    {/* <div className="footer" ><div style={{fontFamily:"cursov",fontWeight:"bold"}}>Follow us!</div><br/><img className="fa fa-facebook" src="/13.PNG" ref="fb" onClick={() => window.location="https://www.facebook.com/medamine.blibech"} style={{ cursor:'wait',marginLeft:'0px',marginRight:'80px' }}/><br/><img  className="fa fa-google" src="/14.jpg" ref="fb" onClick={() => window.location="https://mail.google.com/mail/u/0/#ùinbox"} style={{ cursor:'wait', marginLeft:'0px' ,marginRight:'80px'}} /></div> */}
                 </div>
                            
         )

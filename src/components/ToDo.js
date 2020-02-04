@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {link} from 'react-router-dom'
 class ToDo extends Component {
 
     state = {
@@ -15,9 +16,11 @@ class ToDo extends Component {
         }
 
         return (
+            <div style={{border:"3px solid lightgray",background:"blue"}}>
             <div style={{ marginTop: 10, padding: 4, width: '60%'}}>
-                <p style={{boxShadow:'0px 10px 5px 1px gray'}}
-                 onClick={() => this.setState({done: !this.state.done})}>{this.props.task}</p>
+                <p style={{}}
+    onClick={() => this.setState({done: !this.state.done })}><b >Subject: {this.props.task}</b><b>Description: {this.props.tas}</b></p>
+            </div>
             </div>
         )
 

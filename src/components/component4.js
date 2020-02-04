@@ -1,61 +1,73 @@
-import React,{Component} from "react";
-
-class Ki extends Component {
-
-    state = {
-    name: 'Kerkennah',
-    photo: "/b.JPG",
-    description: 'The islands and islets of Kerkennah offer a wild and sometimes virgin nature, a perfect destination for those who want to change their air and get away from city life. The weather in Kerkennah is mild and pleasant throughout the year, and the beaches are of incomparable beauty.but it is isolate from sfax .when,there is a storm '
+import React from 'react';
+// import ki from "./component4"
+import Ri from "./components5";
+// import './style.css';
+export default ()=>{
+ 
+  return(
+      <div style={{display:'flex',justifyContent:"space-around",marginTop:"5%"}}>
+        <Ri textContent="Your ideas about Education" />
+      </div>
+  )
   }
+// / import React,{Component} from "react";
 
-  handleAiClick = () => {
-   this.setState({
-    name: 'Ain drahim',
-    photo: "/a.JPG",
-    description: 'Aïn Draham seems to have been created for the happiness of those who aspire to a peaceful vacation, far from the din of overcrowded and noisy tourist cities, far from the sea and far from the desert where the pleasures of swimming or trips in the great south can be as exciting as it is tiring.but it was sad because my rules have not any protective support.'
-   })
-   }
+// class Ki extends Component {
 
-   handleCiClick = () => {
-    this.setState({
-    name: 'Ain snoussi',
-    photo: "/c.JPG",
-    description: 'I\'m sad because my rules is destracted.'  })
+//     state = {
+//     name: 'Education',
+//     photo: "/11.JPG",
+//     description: 'education in tunisia has much probem of infrastucture'
+//   }
 
-   }
+//   handleAiClick = () => {
+//    this.setState({
+//     name: 'Politics',
+//     photo: "/10.JPG",
+//     description: 'it\'s importane to be free on what to do,but there are many polics people no known what is important to do for get up whith country.'
+//    })
+//    }
 
-   handleBiClick = () => {
-    this.setState({
-    name: 'Kerkennah ',
-    photo: "/b.JPG",
-    description: 'The islands and islets of Kerkennah offer a wild and sometimes virgin nature, a perfect destination for those who want to change their air and get away from city life. The weather in Kerkennah is mild and pleasant throughout the year, and the beaches are of incomparable beauty.but it is isolate from sfax .when,there is a storm .'
-    })
-   }
+//    handleCiClick = () => {
+//     this.setState({
+//     name: 'Health',
+//     photo: "/12.JPG",
+//     description: 'Medcin in our country are good and they have a good competence in these domaine but there are not a good area to practise it.suchb as there are not a materiel,hospitals...'  })
 
-   render() {
-    return (
-     <div>
-         <div style={{marginTop: 20, display: 'flex', justifyContent: 'center'}}>
-            <button className="ux" style={{ padding: '1em', border: ' 1px solid #CCC', borderRadius: '1em'}} onClick={this.handleAiClick}>Ain drahem</button>
-            <button className="ux" style={{ padding: '1em', border: ' 1px solid #CCC', borderRadius: '1em'}} onClick={() => this.handleCiClick()}>Ain snoussi</button>
-            <button className="ux" style={{ padding: '1em', border: ' 1px solid #CCC', borderRadius: '1em'}} onClick={() => this.handleBiClick()}>Kerkennah</button>
-         </div>
+//    }
 
-       <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column'}}>
-           <h1 style={{ textShadow:"1px 1px 10px red"}}>{this.state.name}</h1>
-           <img style={{width:'20%',height:'20%', borderRadius: "20px"}} src={this.state.photo} />
-           <p style={{textIndent:30,fontWeight:"bold",color:"white"}}>{this.state.description}</p>
-       </div>
+//    handleBiClick = () => {
+//     this.setState({
+//     name: 'Education ',
+//     photo: "/11.JPG",
+//     description: 'education in tunisia has much probem of infrastucture'
+//     })
+//    }
 
-</div>
+//    render() {
+//     return (
+//      <div>
+//          <div style={{marginTop: 20, display: 'flex', justifyContent: 'center'}}>
+//             <button className="ux" style={{ padding: '1em', border: ' 1px none #CCC', borderRadius: '1em'}} onClick={this.handleAiClick}>Ain drahem</button>
+//             <button className="ux" style={{ padding: '1em', border: ' 1px none #CCC', borderRadius: '1em'}} onClick={() => this.handleCiClick()}>Ain snoussi</button>
+//             <button className="ux" style={{ padding: '1em', border: ' 1px none #CCC', borderRadius: '1em'}} onClick={() => this.handleBiClick()}>Kerkennah</button>
+//          </div>
+
+//        <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column'}}>
+//            <h1 style={{ textShadow:"1px 1px 10px blue"}}>{this.state.name}</h1>
+//            <img style={{width:'20%',height:'20%', borderRadius: "20px"}} src={this.state.photo} />
+//            <p style={{textIndent:30,fontWeight:"bold",color:"red"}}>{this.state.description}</p> 
+//        </div>
+
+// </div>
 
 
 
 
-)
-}
-}
-export default Ki;
+// )
+// }
+// }
+// export default Ki;
 // // import {Link} from "react-router-dom";
 // export default ()=>{
 //     return(
