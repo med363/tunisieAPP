@@ -1,53 +1,102 @@
 import React, {Component} from 'react';
 import ToDo from './ToDo';
-import {addsRef} from "../config/firebase"
+import axios from 'axios' 
+// import {addsRef} from "../config/firebase"
 import '../App.css'
-class Ri extends Component {
-
-
-  state = {
-    inputText: '',
-    inputDec:'',
-    tasks: [],
-    tab:[]
-  }
-
-  handleAddClick = () => {
-    if (this.state.inputText.trim() !== '') {
-      const tasksList = this.state.tasks;
-      const table= this.state.tab;
-      tasksList.push(this.state.inputText);
-      table.push(this.state.inputDec);
-      this.setState({
-        tasks: tasksList,
-        tab:table,
-        inputText: '',
-        inputDec:''
-
-      })
+export default class Ri extends Component {
+constructor(props){
+  super(props)
+    this.state={
+      // comments:'',
+      tasks: [],
+      
+      inputText: ''
     }
-  }
-    handleSubmit = (event) => {
-      event.preventDefault();
-      console.log('from handleSubmit');
-      console.log('this.refs.ideas: ', this.refs.ideas.value);
-      addsRef.push().set({
-        ideas: this.refs.ideas.value,
-      })
-      // this.refs.aider.reset()
-  }
+  
+}
 
-  render() {
+handleChange = event => {
+  
+  if (this.state.inputText.trim() !== '') {
+    const tasksList = this.state.tasks;
+  tasksList.push(this.state.inputText)
+    this.setState({
+      // [event.target.name]: event.target.value,
+   tasks: tasksList,
+   inputText: ''    
+    })
+
+} 
+ }
+handleSubmit = event => {
+    event.preventDefault();
+    const comment = {
+        comments: this.state.commentaire,
+
+    }
+    axios.post('http://localhost:5000/comments', comment)
+    .then(res => {
+      console.log('res: ', res);
+      this.setState({comments: res.data})
+  
+  })
+      
+    .catch((err) => console.log(err))
+} 
+
+
+//   state = {
+//     
+//     inputDec:'',
+//     ,
+//     tab:[]
+//   }
+
+//   handleAddClick = () => {
+//     if (this.state.inputText.trim() !== '') {
+//       
+//       const table= this.state.tab;
+//       ;
+//       table.push(this.state.inputDec);
+//       this.setState({
+//        
+//         tab:table,
+//         
+//         inputDec:''
+
+//       })
+//     }
+//   }
+//    componentWillMount=()=>{
+// alert("Thanks for add you opinion")
+//    }
+
+
+
+//     // handleSubmit = (event) => {
+//     //   event.preventDefault();
+//     //   console.log('from handleSubmit');
+//     //   console.log('this.refs.ideas: ', this.refs.ideas.value);
+//     //   addsRef.push().set({
+//     //     ideas: this.refs.ideas.value,
+//     //   })
+//       // this.refs.aider.reset()
+//   }
+
+render() {
     
     return (
-      <div  style= {{display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: 40,color:"black"}}>
-        <div  ref="aider" onInput={this.handleSubmit}>
+      <div  style= {{display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: "15%",color:"black"}}>
+        <div  >
           <div>
-           <h2 style={{textShadow: "2px 2px 4px #000000",color:"white"}}>{this.props.textContent}</h2>
-           <input ref="ideas"   rows="10" cols="60"
+           <h2 style={{marginLeft:"60px"}} className="title">{this.props.textContent}</h2>
+           <input
+           
+             
             style={{width: 500, height: 30}} 
-            value={this.state.inputText} 
-            onChange={(event) => this.setState({inputText: event.target.value})}
+            // name='commentaire'
+            value={this.setState.inputText} 
+            onChange={this.handleChange}
             />
         {/* <br/>
           // <textarea ref="ideas"   rows="10" cols="68.5"
@@ -57,18 +106,18 @@ class Ri extends Component {
           //   placeholder="Put You description " 
           >Subject:
           your description:</textarea><br/> */}
-          <button className="ux" onClick={this.handleAddClick} >Add</button>
+          <button className="ux" onSubmit={this.handleSubmit}   >Add</button>
           </div>
         </div>
-        {this.state.tasks.map((item) => {
-          return <ToDo task={item} />
+      {this.state.tasks.map((item) => {
+          return <ToDo  task={item} />
         })}
-         {this.state.tab.map((item) => {
+         {/* {this.state.tab.map((item) => {
           return <ToDo tas={item} />
-        })}
+        })} */}
+        
       </div>
     )
-  }
-}
+};
 
-export default Ri;
+}

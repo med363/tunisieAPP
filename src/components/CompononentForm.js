@@ -52,7 +52,7 @@ class contact extends Component {
 
     render() {
         return (
-                <div className="contact1" >
+                <div  >
                     <div className="container-contact1">
                     <form ref="contactForm"  onSubmit={this.handleSubmit} style={{marginTop:"20%",height:"450px" ,marginRight:"30%" ,marginLeft:"-2%",border:'1px none blue',padding:'30px,30px,30px,30px' }} className="contact1-form validate-form">
                         <span className="contact1-form-title">CONTACT US</span>
@@ -77,7 +77,7 @@ class contact extends Component {
                         
 
                     </form>
-                    <img style={{width:"30%",height:"30%"}} src="/1.png"/>
+                    <img src='/1.jpg'/>
                     </div>
                     
                         

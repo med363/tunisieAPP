@@ -22,5 +22,6 @@ export default ()=>{
         
         <Ri textContent="Your ideas about Health" />
       </div>
+      
   )
   }

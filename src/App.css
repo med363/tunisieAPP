@@ -158,6 +158,7 @@ button:hover {
   background-color:#FFBC13;
   border: none;
   border-radius: 0px;
+  margin-top: 20px;
   
 }
 .imag:hover{
@@ -430,8 +431,7 @@ display: flex;
     width: 100%;
     min-height: 100%;
     padding: 15px;
-  
-    background:lightgray;
+
     background: -webkit-linear-gradient(left, #0072ff, #00c6ff);
     background: -o-linear-gradient(left, #0072ff, #00c6ff);
     background: -moz-linear-gradient(left, #0072ff, #00c6ff);
@@ -449,20 +449,26 @@ display: flex;
   
   .container-contact1 {
     width: 1163px;
-    background: #fff;
+   
     border-radius: 10px;
-    overflow: hidden;
-  
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    background-image:url("/public/1.jpg");
+    
     display: -webkit-box;
     display: -webkit-flex;
     display: -moz-box;
     display: -ms-flexbox;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    
     align-items: center;
   
     padding: 90px 130px 88px 148px;
+    margin-top: -148px;
+
   }
   
   /*------------------------------------------------------------------
@@ -473,11 +479,10 @@ display: flex;
   .input1 {
     display: block;
     width: 100%;
-    background: #e6e6e6;
     font-family: Montserrat-Bold;
     font-size: 15px;
     line-height: 1.5;
-    color: #666666;
+    
   }
   .wrap-input1 {
     position: relative;
@@ -492,7 +497,11 @@ display: flex;
   }
   @media (max-width: 768px) {
     .container-contact1 {
-      padding: 90px 80px 88px 80px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      
+      background-image:url("/1.jpg");
     }
   }
   .validate-input {
@@ -548,7 +557,11 @@ display: flex;
   
   @media (max-width: 768px) {
     .container-contact1 {
-      padding: 90px 80px 88px 80px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      
+      background-image:url("/public/1.jpg");
     }
   }
 
@@ -630,3 +643,23 @@ display: flex;
 
 
 } */
+
+.presentation{
+display: flex;
+justify-content: space-between;
+width: 1069px;
+    margin-left: 143px;
+    margin-top: 206px;
+}
+
+
+.par{
+
+  width: 686px;
+
+}
+.h{
+
+  width: 378px;
+
+}
