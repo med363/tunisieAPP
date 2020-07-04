@@ -1,12 +1,12 @@
 import React from 'react';
 // import ki from "./component4"
-import Ri from "./components5";
+import Ki from "./EducationTodo";
 // import './style.css';
 export default ()=>{
  
   return(
       <div style={{display:'flex',justifyContent:"space-around",marginTop:"5%"}}>
-        <Ri textContent="Your ideas about Education" />
+        <Ki textContent="Your ideas about Education" />
       </div>
   )
   }

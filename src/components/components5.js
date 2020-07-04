@@ -31,7 +31,7 @@ handleChange = event => {
 handleSubmit = event => {
     event.preventDefault();
     const comment = {
-        comments: this.state.commentaire,
+        comments: event.target.value,
 
     }
     axios.post('http://localhost:5000/comments', comment)

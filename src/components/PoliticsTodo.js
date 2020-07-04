@@ -7,16 +7,16 @@ import { Form } from 'react-bootstrap';
 class ToDo extends Component {
 
     state = {
-        comments:[],
+        comments_politics:[],
         item:"",
         id:''
     }
     componentDidMount() {
         
-        axios.get('http://localhost:5000/comments')
+        axios.get('http://localhost:5000/comments2')
             .then(res => {
                 console.log('res: ', res);
-                this.setState({comments: res.data})
+                this.setState({comments_politics: res.data})
             
             })
             
@@ -24,11 +24,11 @@ class ToDo extends Component {
             .catch(err => console.log('err: ', err))    
     }
     componentDidUpdate(prevprops,prevState){
-        if(prevState.comments.length!=this.state.comments){
-            axios.get('http://localhost:5000/comments')
+        if(prevState.comments_politics.length!=this.state.comments_politics){
+            axios.get('http://localhost:5000/comments2')
             .then(res => {
                 console.log('res: ', res);
-                this.setState({comments: res.data})
+                this.setState({comments_politics: res.data})
             
             })
         }
@@ -42,12 +42,12 @@ class ToDo extends Component {
     
 
     handleDelete = (id) => {
-         axios.delete(`http://localhost:5000/comments/${id}`)
+         axios.delete(`http://localhost:5000/comments2/${id}`)
            .then((res) => {
                 if (res.status === 200) {
                     this.setState((prevState) => {
                        return {
-                        comments: prevState.comments.filter((item) => item._id != id)
+                        comments: prevState.comments_politics.filter((item) => item._id != id)
                 }
                   })
                }
@@ -57,10 +57,10 @@ class ToDo extends Component {
      handleSubmit = () => {
        
         const comment = {
-            comments: this.state.item,
+            comments_politics: this.state.item,
     
         }
-        axios.post('http://localhost:5000/comments', {comments:this.state.item}) 
+        axios.post('http://localhost:5000/comments2', {comments_politics:this.state.item}) 
         .catch((err) => console.log(err))
     } 
     
@@ -84,15 +84,15 @@ class ToDo extends Component {
            />
            <button className="ux" onClick={this.handleSubmit}>Add</button>
            
-           {console.log(this.state.comments)}
-             {this.state.comments.map((el)=><div style={{color:"black",borderLeft:"1px solide blue ",background:"lightblue",marginRight:"12px",marginTop:"1px"}}>
-                 <p>{el.comments}</p>
-                 
+           {console.log(this.state.comments_politics)}
+             {this.state.comments_politics.map((el)=><div style={{color:"black",borderLeft:"1px solide blue ",background:"lightblue",marginRight:"12px",marginTop:"1px"}}>
+                 <p>{el.comments_politics}</p>
+                 {/* <button >delet</button> */}
                  <div style={{marginRight:'60%'}}>
                      
                  <button onClick={()=>this.handleDelete(el._id)}>delet</button>
                  
-                 <Link to={`./modify_comments/${el._id}`}>
+                 <Link to={`./modify_comments2/${el._id}`}>
                 <button>modify</button>
                 </Link>
                 

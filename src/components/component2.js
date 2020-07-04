@@ -22,13 +22,15 @@
 
 import React from 'react';
 // import ki from "./component4"
-import Ri from "./components5";
+import Ci from "./PoliticsTodo";
+// import {CompD} from './Modify_comments'
 // import './style.css';
 export default ()=>{
  
   return(
       <div style={{display:'flex',justifyContent:"space-around",marginTop:"5%"}}>
-        <Ri textContent="Your ideas about Politics" />
+        <Ci textContent="Your ideas about Politics" />
+        {/* <CompD textContent="Your ideas about Politics" /> */}
       </div>
   )
   }

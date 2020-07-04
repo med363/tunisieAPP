@@ -4,6 +4,10 @@ import CompR from "./components/component6";
 import Comp2 from "./components/component2";
 import './App.css'
 import Compx from './Proprietes'
+import CompD from './components/Modify_comments'
+import CompA from './components/Modify_comments2'
+import CompB from './components/Modify_comments3'
+import CompH from './components/ComponentsOfAllContacts'
 // import Comp4 from "./components/component4";
 //       <body>
 //         {/* <!-- The core Firebase JS SDK is always required and must be listed first --> */}
@@ -38,6 +42,7 @@ src="https://www.youtube.com/embed/w7es_o012ps?loops=1">
     import comp2 from "./components/component2";
     import comp5 from './components/component4';
     import comp6 from './components/Component7'
+import ToDo from "./components/ToDo";
     
     class App extends Component {
       
@@ -56,12 +61,15 @@ src="https://www.youtube.com/embed/w7es_o012ps?loops=1">
           <Route  exact path="/components/component6" component={CompR} />
           <Route path="/components/component2" component={comp2} />
           <Route path="/components/component4" component={comp5} />
+          <Route path="/components/Component7" component={comp6} />
           <Route  path="/components/component1" component={Comp} />
           <Route path="/Proprietes" component={Compx}/>
           <Route path="/components/component3" component={Comp3} />
           <Route path="/components/ComponentForm" component={Comp4} />
-          <Route path="/components/Component7" component={comp6} />
-
+          <Route path="/components/Modify_comments/:id" component={CompD} />
+          <Route path="/components/Modify_comments2/:id" component={CompA} />
+          <Route path="/components/Modify_comments3/:id" component={CompA} />
+          <Route path="/components/ComponentsOfAllContacts" component={CompH}/>
         </Switch>
       </BrowserRouter>
     )
