@@ -1,7 +1,7 @@
 pipeline
 agent any
 enviroment{
-  NEW_VERSION ='1.0.0'
+  NEW_VERSION ='1.1.1'
   SERVER_CREDENTIALS = credentials('serverCredentials')
 stages{
   satge('build'){
