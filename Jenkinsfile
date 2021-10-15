@@ -2,7 +2,7 @@ pipeline
 agent any
 enviroment{
   NEW_VERSION ='1.1.1'
-  SERVER_CREDENTIALS = credentials('serverCredentials')
+//   SERVER_CREDENTIALS = credentials('serverCredentials')
 stages{
   satge('build'){
     steps {
@@ -18,7 +18,7 @@ stages{
   stage('deploy'){
     steps {
   echo 'deploying the app ...'
-      sh "${SERVER_CREDENTIALS}"
+//       sh "${SERVER_CREDENTIALS}"
     }
   }
   }
