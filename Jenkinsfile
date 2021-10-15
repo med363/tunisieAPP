@@ -1,11 +1,11 @@
 pipeline{
 agent any
-enviroment{
+environment{
   NEW_VERSION ='1.1.1'
   }
 //   SERVER_CREDENTIALS = credentials('serverCredentials')
 stages{
-  satge('Build'){
+  stage('Build'){
     steps {
       echo 'building the app...'
       echo "build version ${NEW_VERSION}"
