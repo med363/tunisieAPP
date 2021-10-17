@@ -1,6 +1,7 @@
 pipeline {
-    agent any
+    agent {
     docker {image "nodejs"}
+    }
     environment{
   NEW_VERSION ='1.1.1'
   }
