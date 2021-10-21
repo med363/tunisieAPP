@@ -3,4 +3,4 @@ MAINTAINER blibechmedamine@gmail.com
 RUN apt-get update
 RUN apt-get install -y nginx
 VOLUME /var/log/nginx/log
-EXPOSE 8080
+EXPOSE 3000
