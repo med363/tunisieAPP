@@ -1,12 +1,13 @@
 pipeline {
-    agent {
-    docker {image "nodejs"}
-    }
     environment{
   NEW_VERSION ='1.1.1'
+  imagename = 'myweb1'
+  registryCredential = 'mohamedamineblibech'
+  dockerImage = ''
+
   }
 //   SERVER_CREDENTIALS = credentials('serverCredentials')
-    
+    agent any{
     stages{
         stage ("cloning") {
             steps{
@@ -21,6 +22,33 @@ pipeline {
                 sh "cd the-example-app.nodejs && npm install"
             }
         }
+        
+        stage('Building image') {
+           steps{
+             script {
+                    dockerImage = docker.build imagename
+                    }
+                }                   
+            }
+        
+        stage('Deploy Image') {
+      steps{
+        script {
+          docker.withRegistry( '', registryCredential ) {
+            dockerImage.push("$BUILD_NUMBER")
+             dockerImage.push('latest')
+
+          }
+        }
+      }
+    }
+    stage('Remove Unused docker image') {
+      steps{
+        sh "docker rmi $imagename:$BUILD_NUMBER"
+         sh "docker rmi $imagename:latest"
+
+      }
+    }
         stage ("Deploy"){
             steps{
                 echo "build version ${NEW_VERSION}"
@@ -31,7 +59,7 @@ pipeline {
         stage ("Test"){
             steps{
                 echo "verify"
-                sh "curl http://localhost:3000" 
+                sh "curl http://localhost:5000" 
             }
         }
 
