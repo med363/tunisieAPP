@@ -90,7 +90,7 @@ pipeline {
         stage ("Test"){
             steps{
                 echo "verify"
-                sh "curl -X POST http://127.0.0.1:3000"
+                sh "curl -X POST http://localhost:3000"
             }
         }
     }
