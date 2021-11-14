@@ -84,7 +84,7 @@ pipeline {
         stage ("Deploy"){
             steps{
                 echo "start project"
-                sh "npm run start:dev &"
+                sh "npm start &"
             }
         }
         stage ("Test"){
