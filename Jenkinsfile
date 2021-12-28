@@ -69,29 +69,42 @@
 
 
 pipeline {
-    agent { dockerfile true }
-
-
-    stages {
-
-        stage ("Install dependenciess"){
-            steps{
-                sh "pwd"
-                echo "installing dependencies"
-                sh "npm install"
-            }
-        }
-        stage ("Deploy"){
-            steps{
-                echo "start project"
-                sh "npm start &"
-            }
-        }
-        stage ("Test"){
-            steps{
-                echo "verify"
-                sh "curl -X POST http://localhost:3000"
-            }
-        }
-    }
+     environment{
+   NEW_VERSION ='1.1.1'
+   }
+ 
+      agent { dockerfile true }
+     stages{
+         stage ("cloning") {
+         
+             steps{
+             sh "[ -d 'tunisieAPP' ] && rm -rf tunisieAPP"
+                 echo "cloning"
+                sh "git clone https://github.com/med363/tunisieAPP.git"
+             }
+         }
+         stage ("Install dependenciess"){
+             steps{
+                 echo "installing dependencies"
+                 
+                 sh "cd tunisieAPP && npm install"
+             }
+         }
+        
+       
+         stage ("Deploy"){
+             steps{
+                 echo "build version ${NEW_VERSION}"
+                 echo "start project"
+                 sh "cd tunisieAPP && npm run start:dev &"
+             }
+         }
+         stage ("Test"){
+             steps{
+                 echo "verify"
+                 sh "curl  -port 3000 -X POST http://localhost:3000" 
+             }
+         }
+     }
+    
 }
