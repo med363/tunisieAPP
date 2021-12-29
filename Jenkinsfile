@@ -78,7 +78,6 @@ pipeline {
          stage ("cloning") {
          
              steps{
-             sh "[ -d 'tunisieAPP' ] && rm -rf tunisieAPP"
                  echo "cloning"
                 sh "git clone https://github.com/med363/tunisieAPP.git"
              }
