@@ -1,6 +1,5 @@
 import React,{ Component }from "react";
-import {  BrowserRouter,Route, Link} from "react-router-dom";
-import { Carousel } from 'react-bootstrap';
+
 import Slider from './slider'
 
 export default class compR extends Component{

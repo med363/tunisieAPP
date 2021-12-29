@@ -1,4 +1,4 @@
-import React,{useState,render} from 'react' //imr function || imrc class
+import React,{useState} from 'react' //imr function || imrc class
 import { Carousel } from 'react-bootstrap';
 
 

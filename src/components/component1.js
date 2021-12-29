@@ -14,7 +14,7 @@ export default ()=>{
 ,health,Education...<br/>
 <button className='ux' style={{width:"%"}} onClick={()=>window.location="/Proprietes"}>For Descovering</button> 
             </p> 
-    <img className="h" src="/images.jpg"/>
+    <img className="h" src="/images.jpg" alt='avatar'/>
              
            
             
