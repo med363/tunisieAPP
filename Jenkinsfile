@@ -79,6 +79,7 @@ pipeline {
          
              steps{
              sh "[ -d 'tunisieAPP' ] && rm -rf tunisieAPP"
+             sh "sudo chmod 666 /var/run/docker.sock"
                  echo "cloning"
                 sh "git clone https://github.com/med363/tunisieAPP.git"
              }
