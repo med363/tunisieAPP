@@ -1,12 +1,11 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
 import CompR from "./components/component6";
-import Comp2 from "./components/component2";
+
 import './App.css'
 import Compx from './Proprietes'
 import CompD from './components/Modify_comments'
 import CompA from './components/Modify_comments2'
-import CompB from './components/Modify_comments3'
 import CompH from './components/ComponentsOfAllContacts'
 // import Comp4 from "./components/component4";
 //       <body>
@@ -42,7 +41,7 @@ src="https://www.youtube.com/embed/w7es_o012ps?loops=1">
     import comp2 from "./components/component2";
     import comp5 from './components/component4';
     import comp6 from './components/Component7'
-import ToDo from "./components/ToDo";
+
     
     class App extends Component {
       

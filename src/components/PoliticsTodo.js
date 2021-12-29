@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import { Link} from 'react-router-dom';
-import {CompD} from './Modify_comments'
+
 import axios from 'axios'
-import { Form } from 'react-bootstrap';
+
 
 class ToDo extends Component {
 
@@ -24,7 +24,7 @@ class ToDo extends Component {
             .catch(err => console.log('err: ', err))    
     }
     componentDidUpdate(prevprops,prevState){
-        if(prevState.comments_politics.length!=this.state.comments_politics){
+        if(prevState.comments_politics.length!==this.state.comments_politics){
             axios.get('http://localhost:5000/comments2')
             .then(res => {
                 console.log('res: ', res);
@@ -47,7 +47,7 @@ class ToDo extends Component {
                 if (res.status === 200) {
                     this.setState((prevState) => {
                        return {
-                        comments: prevState.comments_politics.filter((item) => item._id != id)
+                        comments: prevState.comments_politics.filter((item) => item._id !== id)
                 }
                   })
                }
@@ -56,10 +56,10 @@ class ToDo extends Component {
      }
      handleSubmit = () => {
        
-        const comment = {
-            comments_politics: this.state.item,
+//        const comment = {
+//            comments_politics: this.state.item,
     
-        }
+//        }
         axios.post('http://localhost:5000/comments2', {comments_politics:this.state.item}) 
         .catch((err) => console.log(err))
     } 
@@ -67,12 +67,12 @@ class ToDo extends Component {
     
     render() {
 
-        let textDecorationStyle
-        if (this.state.done === true) {
-            textDecorationStyle = 'line-through'
-        } else {
-            textDecorationStyle = 'none'
-        }
+//        let textDecorationStyle
+//        if (this.state.done === true) {
+//            textDecorationStyle = 'line-through'
+//        } else {
+//            textDecorationStyle = 'none'
+//        }
 
         return (
         <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: "5%"}}>

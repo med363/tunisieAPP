@@ -25,7 +25,7 @@
 //     </div>)
 // }
 import React from 'react'
-import { BrowserRouter, Route, Switch, Link } from 'react-router-dom'
+
 import axios from 'axios'
 
 export default class CompD extends React.Component {
@@ -49,7 +49,7 @@ export default class CompD extends React.Component {
         }
         axios.put(`http://localhost:5000/comments/${this.props.match.params.id}`, comment)
         .then(res => {
-            if (res.status == 200) {
+            if (res.status === 200) {
                 this.props.history.push('/components/component7')
             }
         })
@@ -85,7 +85,7 @@ export default class CompD extends React.Component {
             // onChange={(e)=>this.setState({item:e.target.value})}
             />
             <button className="ux" onClick={this.handleSubmit}>Modify comments</button>
-            <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: "15%",color:"black",borderLeft:"1px solide blue ",background:"lightblue",marginRight:"12px",marginTop:"100px"}}>
+            <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: "15%",color:"black",borderLeft:"1px solide blue ",background:"lightblue",marginRight:"12px"}}>
             
             
             

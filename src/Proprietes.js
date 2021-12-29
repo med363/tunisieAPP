@@ -81,7 +81,7 @@ export default ()=>{
             <input className="input1"style={{height:"5vh",borderRadius: '1em',marginTop:"50px",marginLeft:"29%",width:"40%"}} value={textCol} type="text" onChange={(e)=>setText(e.target.value)}placeholder="&#xf0bd;Search ..." />
             <div>
                 {
-                    textCol.length!==0 && <img style={{marginTop:"3%",marginLeft:"35%",width:"400px",height:"300px"}} src={`${textCol}.jpg`} />
+                    textCol.length!==0 && <img alt='alt' style={{marginTop:"3%",marginLeft:"35%",width:"400px",height:"300px"}} src={`${textCol}.jpg`} />
                         
                 }
                 {

@@ -25,8 +25,8 @@ class contact extends Component {
 
             .catch(err => console.log('err: ', err))    
     }
-     componentDidUpdate(prevprops,prevState){
-        if(prevState.contactTunisia.length!=this.state.contactTunisia.length){
+     componentDidUpdate(prevState){
+        if(prevState.contactTunisia.length!==this.state.contactTunisia.length){
             axios.get('http://localhost:5000/contacts')
             .then(res => {
                 console.log('res: ', res);

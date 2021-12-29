@@ -27,7 +27,7 @@ import axios from 'axios'
         }
         axios.post('http://localhost:5000/contacts', contactes)
         .then(res => {
-            if (res.status==200) {
+            if (res.status===200) {
                 this.props.history.push('/components/ComponentsOfAllContacts')
             }
         })
@@ -110,7 +110,7 @@ import axios from 'axios'
                         
 
                     </form>
-                    <img src='/1.jpg' style={{marginLeft: '471px',marginTop: '-520px'}}/>
+                    <img src='/1.jpg' style={{marginLeft: '471px',marginTop: '-520px'}} alt='avatar'/>
                     </div>
                     
                     
