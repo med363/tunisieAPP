@@ -103,7 +103,7 @@ pipeline {
          stage ("Test"){
              steps{
                  echo "verify"
-                 sh "curl  -port 3001 -X POST http://localhost:3001" 
+                 sh "curl  -port 3000 -X POST http://localhost:3000" 
              }
          }
      }
