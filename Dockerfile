@@ -15,7 +15,7 @@ RUN touch /package.json && chmod -R 777 /package.json
 #RUN mkdir /.npm && chmod -R 777 /.npm
 
 RUN mkdir /.npm && chmod -R 777 /.npm
-RUN  chmod 666 /var/run/docker.sock
+
 
 RUN apk update && apk add curl && apk add git 
 EXPOSE 3001
